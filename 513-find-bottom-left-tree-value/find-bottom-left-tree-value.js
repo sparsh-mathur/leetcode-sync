@@ -12,17 +12,16 @@
  */
 var findBottomLeftValue = function(root) {
     const dq = [root]
+    let node = null
     while(dq.length){
-        const node = dq.shift()
+        node = dq.shift()
         if (node.right){
             dq.push(node.right)
         }
         if (node.left){
             dq.push(node.left)
         }
-        if (!dq.length){
-            return node.val
-        }
     }
+    return node.val
     
 };
